@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Dinámico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="alert-card" class="alert hidden">
+        <span id="alert-icon">⚠️</span>
+        <span id="alert-message">Respuesta incorrecta. Intenta de nuevo.</span>
+        <button id="close-alert" class="close-btn">✖</button>
+    </div>
+
+    <div class="content-wrapper">
+        <img src="Logo.png" alt="">
+        <div class="modal">
+            <h1>GasoTrivia</h1>
+            <p id="question-text"></p> <!-- Texto dinámico de la pregunta -->
+            <label id="answer-label" for="answer-input"></label>
+            <input type="text" id="answer-input" />
+            <button id="next-button">Siguiente</button>
+        </div>
+    </div>
+
+    <div class="progress-container">
+        <span class="progress-location">Anzoátegui</span>
+        <div class="progress-wrapper">
+            <img src="camion-removebg-preview.png" alt="Camión" class="progress-truck">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="progress-counter">0/4</div>
+        </div>       
+        <span class="progress-location">Monagas</span>
+    </div>       
+
+    <script src="main.js"></script>
+</body>
+</html>

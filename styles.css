@@ -1,0 +1,264 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Organiza los elementos en columna */
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-image: url('Fondo 1.jpeg'); /* Cambia 'ruta-de-tu-imagen.jpg' por la URL de tu imagen */
+    background-size: cover; /* Hace que la imagen cubra toda la página */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center center; /* Centra la imagen */
+    background-attachment: fixed; /* Mantiene la imagen fija mientras se desplaza */
+    color: #333; /* Asegura que el texto sea legible sobre el fondo */
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    width: 100%;
+    gap: 20px; /* Espacio entre el logo y el modal */
+    position: relative; /* Permite posicionar elementos dentro del contenedor */
+}
+
+.content-wrapper img {
+    position: absolute; /* Permite mover el logo sin alterar el flujo */
+    left: 250px; /* Espaciado del borde derecho */
+    top: 50%; /* Centrado vertical */
+    transform: translateY(-50%); /* Ajuste para centrar */
+    width: 240px; /* Ajusta el tamaño del logo */
+    height: auto; /* Mantén la proporción */
+}
+
+.modal {
+    text-align: center;
+    padding: 30px; /* Reduce el relleno para hacerlo más compacto */
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 500px; /* Limita el ancho máximo */
+    width: 100%; /* Asegúrate de que ocupe todo el espacio disponible */
+    z-index: 1; /* Asegura que el modal esté sobre otros elementos */
+}
+
+h1 {
+    margin: 0 0 20px 0; /* Añade un margen inferior más pequeño */
+    font-size: 32pt; /* Ajusta el tamaño de la fuente */
+}
+
+p {
+    font-size: 16pt; /* Reduce ligeramente el tamaño del texto */
+    margin: 10px 0; /* Menos margen vertical */
+}
+
+input {
+    width: 100%; /* Mantén el ancho completo */
+    padding: 8px; /* Ajusta el relleno para que sea más compacto */
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+label, input, button {
+    margin-top: 10px; /* Reduce los márgenes superiores */
+    display: block;
+}
+
+button {
+    margin: 20px auto 0; /* Separación superior y centrado horizontal */
+    display: block; /* Asegura que el botón se comporte como un bloque */
+    padding: 8px 16px; /* Tamaño compacto del botón */
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para las opciones */
+.options-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten en varias filas si es necesario */
+    gap: 15px; /* Espacio entre las tarjetas */
+    margin-top: 15px;
+}
+
+.options-container label {
+    margin: 5px 0; /* Margen más pequeño entre las opciones */
+    font-size: 0.95rem; /* Reduce ligeramente el tamaño del texto */
+}
+
+.option-card {
+    width: 120px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option-card:hover {
+    border-color: #007bff;
+    background-color: #eef7ff;
+    transform: translateY(-5px); /* Pequeño movimiento hacia arriba */
+}
+
+.option-card.selected {
+    border-color: #007bff;
+    background-color: #007bff;
+    color: #fff;
+    transform: scale(1.05); /* Agranda la tarjeta ligeramente */
+    font-weight: bold;
+}
+
+input[type="radio"] {
+    margin-right: 8px; /* Reduce el espacio entre el radio y el texto */
+}
+
+.progress-container {
+    display: flex; /* Alinea todo en fila */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: space-between; /* Espaciado uniforme entre los elementos */
+    width: 100%; /* Ocupa todo el ancho */
+    max-width: 600px; /* Máximo ancho en pantallas grandes */
+    margin-top: 70px; /* Espacio superior general */
+}
+
+.progress-location {
+    font-size: 1rem; /* Tamaño del texto */
+    font-weight: bold; /* Resalta el texto */
+    margin: 0 20px; /* Espaciado horizontal adicional */
+    color: #333; /* Color del texto */
+    text-align: center;
+    color: white;
+}
+
+.progress-wrapper {
+    position: relative; /* Necesario para posicionar elementos internamente */
+    display: flex;
+    flex-direction: column; /* Elementos apilados: camión, barra, contador */
+    align-items: center; /* Centra todo horizontalmente */
+    width: 90%; /* Ajusta el tamaño general */
+    max-width: 600px; /* Limita el ancho en pantallas grandes */
+    margin: 0 auto; /* Centra horizontalmente en el diseño */
+}
+
+/* Imagen del camión */
+.progress-truck {
+    position: absolute; /* Posiciona el camión respecto al contenedor */
+    top: -45px; /* Encima de la barra */
+    left: 0; /* Comienza al inicio de la barra */
+    width: 60px; /* Tamaño adecuado */
+    height: auto; /* Mantiene la proporción */
+    z-index: 2; /* Asegura que esté encima de la barra */
+    transition: left 0.3s ease; /* Movimiento suave al avanzar */
+}
+
+/* Barra de progreso */
+.progress-bar {
+    width: 100%; /* Barra ocupa todo el ancho disponible */
+    height: 20px; /* Altura más visible */
+    background-color: #ccc; /* Color de fondo */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Evita que elementos internos sobresalgan */
+    margin-top: 20px; /* Espacio entre el camión y la barra */
+    position: relative; /* Necesario para elementos como 'fill' */
+    z-index: 1;
+}
+
+/* Relleno de la barra */
+.progress-fill {
+    width: 0%; /* Inicialmente vacío */
+    height: 100%;
+    background-color: #007bff; /* Color de progreso */
+    transition: width 0.3s ease; /* Animación de cambio de ancho */
+}
+
+/* Contador */
+.progress-counter {
+    margin-top: 10px; /* Espaciado entre la barra y el contador */
+    font-size: 1rem; /* Tamaño del texto */
+    font-weight: bold; /* Resalta el texto */
+    color: white; /* Color del texto */
+}
+
+.progress-counter {
+    text-align: center; /* Centra el contador horizontalmente */
+    margin-top: 10px; /* Espaciado entre la barra y el contador */
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+
+.alert {
+    position: fixed;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background: #ffebee;
+    color: #b71c1c;
+    border: 1px solid #f44336;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    visibility: hidden;
+}
+
+.alert.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.alert.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.alert #alert-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.alert #alert-message {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.alert .close-btn {
+    background: none;
+    border: none;
+    color: #b71c1c;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+img {
+    width: 40px;
+    height: 40px;
+}
